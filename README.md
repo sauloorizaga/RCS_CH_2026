@@ -27,7 +27,7 @@ the 3D CH simulation and energy plot:
 
 ## Usage
 ```matlab
-% Parameters: N=64, Tf=25, dt=0.01, eps=0.1
+% Parameters: N=64, Tf=10, dt=0.01, eps=0.1
 % Place CH3D_RCSX_Solver.m in the same folder
 run RCS_Simulation_Script2026.m
 ```
