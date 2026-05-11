@@ -17,7 +17,8 @@ parameter ($a \geq 1$ vs $a \geq 4$), and scales to $256^3$
 
 ## Contents
 - `CH3D_RCSX_Solver.m` — 3D RCS solver function
-- `RCS_Simulation_Script2026.m` — run script
+- `RCS_Simulation_Script2026.m` — 3D CH simulation script
+- `RCS_PAPER.m` — 2D comparison: RCS vs BDF2-CS
 
 ## Output
 Running **RCS_Simulation_Script2026.m** will generate 
@@ -25,15 +26,26 @@ the 3D CH simulation and energy plot:
 
 <img src="CH3D.png" width=400px height=400px> <img src="Energy.png" width=400px height=400px>
 
+## Output
+Running **RCS_PAPER.m** will generate the 2D side-by-side 
+morphology comparison and energy profiles:
+
+<img src="RCSvsBDF.png" width=500px height=400px>
+
+<img src="RCS_BDF_Energy.png" width=500px height=400px>
+
 ## Usage
 ```matlab
-% Parameters: N=64, Tf=10, dt=0.01, eps=0.1
+% 3D simulation: N=64, Tf=10, dt=0.01, eps=0.1
 % Place CH3D_RCSX_Solver.m in the same folder
 run RCS_Simulation_Script2026.m
+
+% 2D RCS vs BDF2 comparison: N=64, Tf=100, dt=0.01, eps=0.05
+run RCS_PAPER.m
 ```
 
 ## 2D Version
-To adapt for 2D simulations:
+To adapt the 3D solver for 2D simulations:
 - Replace `fftn/ifftn` with `fft2/ifft2`
 - Replace 3D `meshgrid` with 2D version
 - Replace `isosurface` with `pcolor`
