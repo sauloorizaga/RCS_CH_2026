@@ -23,9 +23,7 @@ parameter ($a \geq 1$ vs $a \geq 4$), and scales to $256^3$
 Running **RCS_Simulation_Script2026.m** will generate 
 the 3D CH simulation and energy plot:
 
-<img src="CH3D.png" width=500px height=400px>
-
-<img src="Energy.png" width=500px height=400px>
+<img src="CH3D.png" width=400px height=400px> <img src="Energy.png" width=400px height=400px>
 
 ## Usage
 ```matlab
