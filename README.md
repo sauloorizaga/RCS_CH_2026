@@ -16,6 +16,33 @@ parameter ($a \geq 1$ vs $a \geq 4$), and scales to $256^3$
 - NVIDIA GPU (any CUDA-capable GPU)
 
  
+## Contents
+- `BCP2D_BHM_solver.m` — 2D BHM solver function
+- `BCP2D_main.m` — 2D BCP simulation script
+- `BCP3D_BHM_solver.m` — 3D BHM solver function
+- `BCP3D_main.m` — 3D BCP simulation script
+
+## Output
+Running **BCP2D_main.m** will generate the 2D BCP 
+morphology evolution and energy dissipation figures:
+
+<img src="4_1.png" width=500px height=200px>
+<img src="Energy1.png" width=500px height=300px>
+
+## Usage
+```matlab
+% 2D simulation: N=128, Tf=100, dt=0.01, eps=0.1
+% ubar=0 (lamellar), ubar=0.35 (spheres)
+% Place BCP2D_BHM_solver.m in the same folder
+run BCP2D_main.m
+
+% 3D simulation: N=128, Tf=100, dt=0.01, eps=0.1
+% ubar=0 (lamellar), ubar=0.17 (gyroid)
+% Place BCP3D_BHM_solver.m in the same folder
+run BCP3D_main.m
+```
+
+
 
 ## Citation
 If you use this code, please cite:
