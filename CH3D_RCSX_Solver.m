@@ -1,13 +1,10 @@
 function [U, time_axis, E_history] = CH3D_RCSX_Solver(N, tfinal, dt, epsilon)
-    % --- Physical Parameters ---
-    eps2 = epsilon^2;
-    a_split = 1; 
+% RCS Solver for CH problems. Physical Parameters ---
+    eps2 = epsilon^2; a_split = 1; 
     M = 1; a = 0; b = 2*pi; h = (b-a)/N;
     
     % --- GPU Mesh and Spectral Operators ---
     x = gpuArray(linspace(a, b-h, N));
-    % [X, Y, Z] = meshgrid(x, x, x); % Borrado: no se ocupa dentro del loop (ahorra VRAM)
-    
     k = gpuArray([[0:N/2] [-N/2+1:-1]] ./ M);
     [Kx, Ky, Kz] = meshgrid(k, k, k);
     k2g = Kx.^2 + Ky.^2 + Kz.^2;
@@ -21,7 +18,6 @@ function [U, time_axis, E_history] = CH3D_RCSX_Solver(N, tfinal, dt, epsilon)
     hat_U_n = fftn(U);
     U_old = U; 
     
-    
     steps = ceil(tfinal/dt);
     E_history = zeros(steps, 1);
     time_axis = zeros(steps, 1);
@@ -30,8 +26,8 @@ function [U, time_axis, E_history] = CH3D_RCSX_Solver(N, tfinal, dt, epsilon)
     tic;
         t = 0; it = 1;   
         % Grab initial mass (Corrected line)
-InitialMass = gather(sum(U(:))); 
-fprintf('Masa Inicial: %.16e\n', InitialMass)
+        InitialMass = gather(sum(U(:))); 
+        fprintf('Mass Inicial: %.16e\n', InitialMass)
     
     while t < tfinal - dt*0.01
         U_extrap = 2*U - U_old; 
@@ -54,7 +50,6 @@ fprintf('Masa Inicial: %.16e\n', InitialMass)
             fUf = Uf.^3 - (1+a_split)*Uf;
             Uf = real(ifftn((hat_Uh + (dt/2)*(-k2g.*fftn(fUf))) ./ lhs_f));
         end
-        
         U_next = 2*Uf - Uc;
         
         % --- ENERGY (Parseval's version: Fast & Precise) ---
