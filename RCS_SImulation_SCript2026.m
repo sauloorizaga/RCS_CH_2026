@@ -1,5 +1,5 @@
-% --- Run Test ---
-% Note GPU for N=512 will reuire around 20gbs of VRAM. 
+% Simulation Script to call the RCS 3D Solver
+% Note GPU for N=512 will reuire around 21gbs of VRAM. 
 tic;
 a=0;b=2*pi;
 N = 256/2; Tf = 10; dt = 0.01; eps = 0.1;
@@ -51,26 +51,19 @@ ylabel('Free Energy $\mathcal{E}(u)$', 'Interpreter', 'latex', 'FontSize', 16);
 title(['3D Energy Dissipation | $N = ' num2str(N) '^3$'], 'Interpreter', 'latex', 'FontSize', 18);
 axis tight;
 
-%MASS
-
     % --- Finalizing Simulation ---
     U = gather(U); % La bajamos al CPU para que el .mat no pese tanto y sea compatible
     FinalMass = sum(U(:));
      fprintf('\nSimulacion Terminada.\n');
     fprintf('Masa Final: %.16e\n', FinalMass);
     
-    % --- En tu script de finalización ---
+    % ---Priting/Verification of computations ---
 h = (b-a)/N;
 Vol = h^3;
 RealMassError = abs(InitialMass - FinalMass) * Vol;
 fprintf('Error de Masa Real: %.16e\n', RealMassError);    
 
-    
-    %save('CH3D_Final_Result.mat', 'U', 'E_history', 'time_axis', 'InitialMass', 'FinalMass', 'MassError', 'N', 'dt', 'epsilon');
-   
-%-------------
+%save('CH3D_Final_Result.mat', 'U', 'E_history', 'time_axis', 'InitialMass', 'FinalMass', 'MassError', 'N', 'dt', 'epsilon');
 
-a=toc;
-minutes=a/60;
-hours=a/60^2;
+a=toc;minutes=a/60;hours=a/60^2;
 minutes_hours=[minutes hours] 
