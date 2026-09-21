@@ -1,5 +1,5 @@
 function [U, time_axis, E_history] = CH3D_RCSX_Solver(N, tfinal, dt, epsilon)
-% RCS Solver for CH problems. Physical Parameters ---
+% --- RCS Solver for CH problems. Physical Parameters ---
     eps2 = epsilon^2; a_split = 1; 
     M = 1; a = 0; b = 2*pi; h = (b-a)/N;
     
@@ -9,7 +9,6 @@ function [U, time_axis, E_history] = CH3D_RCSX_Solver(N, tfinal, dt, epsilon)
     [Kx, Ky, Kz] = meshgrid(k, k, k);
     k2g = Kx.^2 + Ky.^2 + Kz.^2;
     k4g = k2g.^2;
-    
     lhs_cs = 1 + dt*(eps2*k4g + a_split*k2g);
     lhs_f  = 1 + (dt/2)*(eps2*k4g + a_split*k2g);
     
@@ -25,9 +24,9 @@ function [U, time_axis, E_history] = CH3D_RCSX_Solver(N, tfinal, dt, epsilon)
     fprintf('Starting 3D RCSX-iter2 (N=%d, dt=%.3f)...\n', N, dt);
     tic;
         t = 0; it = 1;   
-        % Grab initial mass (Corrected line)
+        % Grab initial mass 
         InitialMass = gather(sum(U(:))); 
-        fprintf('Mass Inicial: %.16e\n', InitialMass)
+        fprintf('Initial Mass: %.16e\n', InitialMass)
     
     while t < tfinal - dt*0.01
         U_extrap = 2*U - U_old; 
@@ -58,8 +57,7 @@ function [U, time_axis, E_history] = CH3D_RCSX_Solver(N, tfinal, dt, epsilon)
             E_grad = (eps2 / 2) * (h^3) * sum(k2g(:) .* abs(hatU_next(:)).^2) / (N^3);
             E_pot = 0.25 * (h^3) * sum((U_next(:).^2 - 1).^2);
             E_history(it) = gather(E_grad + E_pot);
-        end
-        
+        end      
         % --- Update ---
         U_old = U;
         U = U_next;
@@ -68,6 +66,5 @@ function [U, time_axis, E_history] = CH3D_RCSX_Solver(N, tfinal, dt, epsilon)
         time_axis(it) = t;
         it = it + 1;
     end
-    U = gather(U); 
-    toc;
+    U = gather(U); toc;
 end
