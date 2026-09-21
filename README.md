@@ -9,7 +9,7 @@ a second-order temporal discretization based on composition
 of first-order CS operators. The scheme eliminates the parasitic 
 spectral root present in BDF2-CS, requires a relaxed splitting 
 parameter ($a \geq 1$ vs $a \geq 4$), and scales to $256^3$ 
-3D simulations on consumer GPU hardware.
+3D simulations on consumer GPU hardware. At 512^3, the solver requires at least a 24 GB GPU in double precision.
 
 ## Requirements
 - MATLAB with Parallel Computing Toolbox
