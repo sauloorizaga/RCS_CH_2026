@@ -17,9 +17,9 @@ parameter ($a \geq 1$ vs $a \geq 4$), and scales to $256^3$
 
 ## Contents
 - `CH3D_RCSX_Solver.m` — 3D RCS solver function
-- `RCS_Simulation_Script2026.m` — run script
-- `RCS_Simulation_Script2026.m` — 3D CH simulation script
-- `RCS_PAPER.m` — 2D comparison: RCS vs BDF2-CS
+- `RCS_Simulation_Script2026.m` — 3D CH simulation script (uses the above solver)
+- `RCS_Comparison2D.m` — 2D comparison: RCS vs BDF2-CS
+- - `RCS_2D_code.m` — self contained script to run the RCS method in 2D
 
 ## Output
 Running **RCS_Simulation_Script2026.m** will generate 
@@ -39,19 +39,16 @@ morphology comparison and energy profiles:
 ```matlab
 % Parameters: N=64, Tf=10, dt=0.01, eps=0.1
 % 3D simulation: N=64, Tf=10, dt=0.01, eps=0.1
-% Place CH3D_RCSX_Solver.m in the same folder
-run RCS_Simulation_Script2026.m
+% Place CH3D_RCSX_Solver.m in the same folder with RCS_Simulation_Script2026.m 
+then run RCS_Simulation_Script2026.m 
 
-% 2D RCS vs BDF2 comparison: N=64, Tf=100, dt=0.01, eps=0.05
-run RCS_PAPER.m
+% To simulate the 2D RCS vs BDF2 comparison: N=64, Tf=100, dt=0.01, eps=0.05
+please run RCS_Comparison2D.m
+
+% To run the RCS alone for 2D computations, use the code RCS_2D_code.m  
 ```
 
-## 2D Version
-To adapt for 2D simulations:
-To adapt the 3D solver for 2D simulations:
-- Replace `fftn/ifftn` with `fft2/ifft2`
-- Replace 3D `meshgrid` with 2D version
-- Replace `isosurface` with `pcolor`
+
 
 ## Citation
 If you use this code, please cite:
