@@ -28,7 +28,7 @@ the 3D CH simulation and energy plot:
 <img src="CH3D.png" width=400px height=400px> <img src="Energy.png" width=400px height=400px>
 
 ## Output
-Running **RCS_PAPER.m** will generate the 2D side-by-side 
+Running **RCS_Comparison2D.m** will generate the 2D side-by-side 
 morphology comparison and energy profiles:
 
 <img src="RCSvsBDF.png" width=500px height=400px>
