@@ -19,7 +19,7 @@ parameter ($a \geq 1$ vs $a \geq 4$), and scales to $256^3$
 - `CH3D_RCSX_Solver.m` — 3D RCS solver function
 - `RCS_Simulation_Script2026.m` — 3D CH simulation script (uses the above solver)
 - `RCS_Comparison2D.m` — 2D comparison: RCS vs BDF2-CS
-- - `RCS_2D_code.m` — self contained script to run the RCS method in 2D
+- `RCS_2D_code.m` — self contained script to run the RCS method in 2D
 
 ## Output
 Running **RCS_Simulation_Script2026.m** will generate 
@@ -47,8 +47,6 @@ please run RCS_Comparison2D.m
 
 % To run the RCS alone for 2D computations, use the code RCS_2D_code.m  
 ```
-
-
 
 ## Citation
 If you use this code, please cite:
