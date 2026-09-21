@@ -9,8 +9,9 @@ N = 256/2; Tf = 10; dt = 0.01; eps = 0.1;
 % --- Domain setup ---
 x = linspace(0, 2*pi, N);[X, Y, Z] = meshgrid(x, x, x);
 
-rng(1527, 'twister');
-U0 = 0.05*rand(N,N,N) - 0.025;
+rng(1527, 'twister');U0 = 0.05*rand(N,N,N) - 0.025;
+% Direct initialization is used for the 3D implementation.
+% The 50-step bootstrap is retained only in the 2D verification code.
 InitialMass = sum(U0(:));
 
 figure(1); %clf;
@@ -51,8 +52,7 @@ axis tight;
     fprintf('\nSimulation Completed.\n');
     fprintf('Final Mass: %.16e\n', FinalMass);   
     % ---Priting/Verification of computations ---
-h = (b-a)/N;Vol = h^3;
-RealMassError = abs(InitialMass - FinalMass) * Vol;
+h = (b-a)/N;Vol = h^3;RealMassError = abs(InitialMass - FinalMass) * Vol;
 fprintf('Mass Error Computed: %.16e\n', RealMassError);    
 
 %save('CH3D_Final_Result.mat', 'U', 'E_history', 'time_axis', 'InitialMass', 'FinalMass', 'MassError', 'N', 'dt', 'epsilon');
