@@ -25,7 +25,7 @@ k2g = kx + ky; k4g = k2g.^2;
 rng(100,'twister')
 %rng(100,'twister'); % For reproducibility
 Uinit = 0.05*rand(N, N) - 0.025; % Clean random start
-Uinit=gpuArray(Uinit)
+Uinit=gpuArray(Uinit);
 
 % --- LHS Operators ---
 lhs_cs = 1 + dt*(eps2*k4g + a_split*k2g);
