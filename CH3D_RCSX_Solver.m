@@ -1,5 +1,5 @@
 function [U, time_axis, E_history] = CH3D_RCSX_Solver(N, tfinal, dt, epsilon)
-% --- RCS Solver for CH problems. Physical Parameters ---
+% --- RCS Solver for CH problems in 3D upto 512^3. Physical Parameters ---
     eps2 = epsilon^2; a_split = 1; 
     M = 1; a = 0; b = 2*pi; h = (b-a)/N;
     
