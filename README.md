@@ -45,7 +45,8 @@ then run RCS_Simulation_Script2026.m
 % To simulate the 2D RCS vs BDF2 comparison: N=64, Tf=100, dt=0.01, eps=0.05
 please run RCS_Comparison2D.m
 
-% To run the RCS alone for 2D computations, use the code RCS_2D_code.m  
+% To run the RCS alone for 2D computations,
+use the code RCS_2D_code.m  
 ```
 
 ## Citation
