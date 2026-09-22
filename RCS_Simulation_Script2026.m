@@ -1,5 +1,5 @@
 % Simulation Script to call the RCS 3D Solver
-% Note GPU for N=512 will require a GPU with at least 24 Gbs of VRAM. 
+% For N=512, code will require a GPU with at least 24 Gbs of VRAM. 
 clc
 tic;
 a=0;b=2*pi;
