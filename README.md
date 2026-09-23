@@ -37,6 +37,7 @@ morphology comparison and energy profiles:
 
 ## Usage
 ```matlab
+% To run the 3D code - RCS
 % Parameters: N=64, Tf=10, dt=0.01, eps=0.1
 % 3D simulation: N=64, Tf=10, dt=0.01, eps=0.1
 % Place CH3D_RCSX_Solver.m in the same folder with RCS_Simulation_Script2026.m 
