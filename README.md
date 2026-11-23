@@ -11,10 +11,12 @@ We propose the Richardson--Convex Splitting (RCS) framework, a second-order temp
 - NVIDIA GPU (any CUDA-capable GPU)
 
 ## Contents
-- `CH3D_RCSX_Solver.m` — 3D RCS solver function
-- `RCS_Simulation_Script2026.m` — 3D CH simulation script (uses the above solver)
-- `RCS_Comparison2D.m` — 2D comparison: RCS vs BDF2-CS
-- `RCS_2D_code.m` — self contained script to run the RCS method in 2D
+* `CH3D_RCSX_Solver.m` — 3D RCS solver function
+* `RCS_Simulation_Script2026.m` — 3D CH simulation script (uses the above solver)
+* `RCS_Comparison2D.m` — 2D comparison: RCS vs BDF2-CS
+* `RCS_2D_code.m` — self-contained script to run the RCS method in 2D
+* `BCP_512_paper.m` — self-contained script for the 3D Block Copolymer (BCP) model, with energy, mass check and timing
+* `BCP3D_Benchmark_512.m` — timing and peak-memory benchmark at 512^3 (Table 4 of the paper)
 
 ## Output 3D Cahn-Hilliard
 Running **RCS_Simulation_Script2026.m** will generate 
