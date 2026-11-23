@@ -4,12 +4,7 @@ Cahn-Hilliard Equation: Stability Analysis and GPU-Accelerated
 3D Computations
 
 ## Overview
-We propose the Richardson--Convex Splitting (RCS) framework, 
-a second-order temporal discretization based on composition 
-of first-order CS operators. The scheme eliminates the parasitic 
-spectral root present in BDF2-CS, requires a relaxed splitting 
-parameter ($a \geq 1$ vs $a \geq 4$), and scales to $256^3$ 
-3D simulations on consumer GPU hardware. At 512^3 grids, the solver (at double precision) requires at least a 24 GB of GPU VRAM.
+We propose the Richardson--Convex Splitting (RCS) framework, a second-order temporal discretization based on composition of first-order CS operators. The scheme is Newton-free, conserves mass, remains stable for a wider range of splitting parameters than the classical BDF2-CS scheme (a≥1 vs a>1.5), and scales to 256^3 and 512^3 3D simulations on consumer GPU hardware. At 512^3 grids, the solver (in double precision) requires a GPU with 24 GB of VRAM.
 
 ## Requirements
 - MATLAB with Parallel Computing Toolbox
