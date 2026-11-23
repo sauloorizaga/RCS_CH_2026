@@ -21,13 +21,13 @@ parameter ($a \geq 1$ vs $a \geq 4$), and scales to $256^3$
 - `RCS_Comparison2D.m` — 2D comparison: RCS vs BDF2-CS
 - `RCS_2D_code.m` — self contained script to run the RCS method in 2D
 
-## Output
+## Output 3D Cahn-Hilliard
 Running **RCS_Simulation_Script2026.m** will generate 
 the 3D CH simulation and energy plot:
 
 <img src="CH3D.png" width=400px height=400px> <img src="Energy.png" width=400px height=400px>
 
-## Output
+## Output 2D Cahn-Hilliard
 Running **RCS_Comparison2D.m** will generate the 2D side-by-side 
 morphology comparison and energy profiles:
 
