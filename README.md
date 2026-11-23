@@ -39,16 +39,19 @@ morphology comparison and energy profiles:
 ## Usage
 ```matlab
 % To run the 3D code - RCS
-% Parameters: N=64, Tf=10, dt=0.01, eps=0.1
 % 3D simulation: N=64, Tf=10, dt=0.01, eps=0.1
-% Place CH3D_RCSX_Solver.m in the same folder with RCS_Simulation_Script2026.m 
-then run RCS_Simulation_Script2026.m 
+% Place CH3D_RCSX_Solver.m in the same folder with RCS_Simulation_Script2026.m
+% then run RCS_Simulation_Script2026.m
 
 % To simulate the 2D RCS vs BDF2 comparison: N=64, Tf=100, dt=0.01, eps=0.05
-please run RCS_Comparison2D.m
+% please run RCS_Comparison2D.m
 
 % To run the RCS alone for 2D computations,
-use the code RCS_2D_code.m  
+% use the code RCS_2D_code.m
+
+% To run the 3D Block Copolymer model (default: Figure 14 of the paper,
+% N=512, Tf=20, dt=0.01, eps=0.1, alpha=38, ubar=0.34, a=1)
+% run BCP_512_paper.m  (set N=256 for a quick test)
 ```
 
 ## Citation
