@@ -22,6 +22,12 @@ the 3D CH simulation and energy plot:
 
 <img src="CH3D.png" width=400px height=400px> <img src="Energy.png" width=400px height=400px>
 
+## Output 3D BCP Equation
+Running **BCP_512_paper.m** will generate 
+the 3D BCP simulation and energy plot:
+
+<img src="BCP_CPC.png" width=400px height=400px> <img src="Energy_CPC.png" width=400px height=400px>
+
 ## Output 2D Cahn-Hilliard
 Running **RCS_Comparison2D.m** will generate the 2D side-by-side 
 morphology comparison and energy profiles:
