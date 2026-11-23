@@ -1,5 +1,5 @@
 % =========================================================
-% Point 6 (3D): setup time, time per step and peak GPU memory
+% (3D): setup time, time per step and peak GPU memory
 % BCP, RCSX-iter2 solver exactly as in BCP3D_RCSX_Solver_512
 % Parameters of the 512^3 run reported in the paper (Fig. BCP_512)
 % =========================================================
