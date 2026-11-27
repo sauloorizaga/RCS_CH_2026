@@ -190,7 +190,7 @@ save('CPC_Table1_errors.mat', 'dt_values', 'err_CS', 'err_BDF2', 'err_RCS');
 % =========================
 % FIGURE 3: error plot
 % =========================
-figure(12); clf;
+figure(3); clf;
 set(gcf, 'Color', 'w', 'Position', [100, 100, 800, 600]);
 loglog(dt_values, err_CS, 'o-', 'Color', [0.6 0.6 0.6], ...
     'LineWidth', 1.5, 'MarkerSize', 6, 'DisplayName', 'Standard CS');
