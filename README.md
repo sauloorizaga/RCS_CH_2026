@@ -54,6 +54,11 @@ morphology comparison and energy profiles:
 % To run the 3D Block Copolymer model (default: Figure 14 of the paper,
 % N=512, Tf=20, dt=0.01, eps=0.1, alpha=38, ubar=0.34, a=1)
 % run BCP_512_paper.m  (set N=256 for a quick test)
+
+% To reproduce Table 1 and Figure 3 of the paper (temporal convergence of
+% CS, BDF2-CS and RCS at Tf=1, N=256, eps=0.1, a=2), place CPC_Table1.m,
+% U_trueIC.mat and U_ref.mat in the same folder and run CPC_Table1.m
+% (set RUN_REFERENCE = true to rebuild U_ref.mat)
 ```
 
 ## Citation
