@@ -18,7 +18,7 @@
 clear; clc;
 
 %% Parameters
-N           = 512/2;     % grid points per dimension
+N           = 512;     % grid points per dimension
 Tf          = 20;      % final time
 dt          = 0.01;    % time step
 epsilon     = 0.1;     % interface parameter
