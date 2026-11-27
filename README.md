@@ -59,6 +59,14 @@ morphology comparison and energy profiles:
 % CS, BDF2-CS and RCS at Tf=1, N=256, eps=0.1, a=2), place CPC_Table1.m,
 % U_trueIC.mat and U_ref.mat in the same folder and run CPC_Table1.m
 % (set RUN_REFERENCE = true to rebuild U_ref.mat)
+
+% To reproduce Figure 7 and Table 3 (long-time morphology under time-step
+% refinement, BDF2-CS vs RCS, N=256, eps=0.05, a=2, Tf=100),
+% run Rev6_5PointMorphology.m
+
+% To reproduce Figure 4 and Table 2 (error versus GPU runtime at equal
+% accuracy, N=256, eps=0.1, a=2, Tf=1), place U_trueIC.mat in the same
+% folder and run Rev6_Accuracy.m
 ```
 
 ## Citation
